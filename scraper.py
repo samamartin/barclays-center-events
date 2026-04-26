@@ -46,7 +46,7 @@ def fetch_events():
     resp.raise_for_status()
     data = resp.json()
     raw_events = data.get("_embedded", {}).get("events", [])
-    return [_parse_event(e) for e in raw_events]
+    return [e for e in [_parse_event(r) for r in raw_events] if e["time"]]
 
 
 def _parse_event(raw):
