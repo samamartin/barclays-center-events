@@ -25,18 +25,18 @@ def build_html(events):
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Barclays Center Events</title>
 </head>
-<body style="margin:0;padding:0;background:#f0f0f0;font-family:'Helvetica Neue',Arial,sans-serif;">
+<body style="margin:0;padding:0;background:#EDF2F7;font-family:'Helvetica Neue',Arial,sans-serif;">
 
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr>
-    <td style="background:#000;padding:32px 24px;text-align:center;">
-      <p style="margin:0 0 4px;color:#999;font-size:11px;letter-spacing:2px;text-transform:uppercase;">
+    <td style="background:#2C5282;padding:32px 24px;text-align:center;">
+      <p style="margin:0 0 4px;color:#90CDF4;font-size:11px;letter-spacing:2px;text-transform:uppercase;">
         Weekly Newsletter
       </p>
       <h1 style="margin:0;color:#fff;font-size:30px;font-weight:700;letter-spacing:1px;">
         Barclays Center
       </h1>
-      <p style="margin:10px 0 0;color:#bbb;font-size:13px;">
+      <p style="margin:10px 0 0;color:#BEE3F8;font-size:13px;">
         {count_label} &bull; {date_range}
       </p>
     </td>
@@ -52,8 +52,8 @@ def build_html(events):
     </td>
   </tr>
   <tr>
-    <td style="background:#111;padding:28px 24px;text-align:center;">
-      <p style="margin:0;color:#888;font-size:12px;line-height:1.6;">
+    <td style="background:#1A365D;padding:28px 24px;text-align:center;">
+      <p style="margin:0;color:#90CDF4;font-size:12px;line-height:1.6;">
         Barclays Center &bull; 620 Atlantic Ave, Brooklyn, NY 11217<br>
         Sent every Monday morning. Events sourced from Ticketmaster.
       </p>
@@ -73,7 +73,7 @@ def _event_card(event):
     )
 
     category_badge = (
-        f'<span style="display:inline-block;background:#000;color:#fff;'
+        f'<span style="display:inline-block;background:#2C5282;color:#fff;'
         f'font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;'
         f'padding:3px 9px;border-radius:2px;margin-bottom:10px;">'
         f'{event["category"]}</span><br>'
@@ -101,7 +101,7 @@ def _event_card(event):
         <strong>{event["date"]}</strong>{time_part}{price_part}
       </p>
       <a href="{event["url"]}"
-         style="display:inline-block;background:#000;color:#fff;text-decoration:none;
+         style="display:inline-block;background:#2B6CB0;color:#fff;text-decoration:none;
                 padding:11px 26px;border-radius:3px;font-size:13px;font-weight:700;
                 letter-spacing:0.5px;">
         Get Tickets &rarr;
