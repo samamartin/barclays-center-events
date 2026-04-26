@@ -69,7 +69,7 @@ def build_html(events):
 def _event_card(event):
     img = (
         f'<img src="{event["image_url"]}" alt="" width="100%"'
-        ' style="display:block;width:100%;height:200px;object-fit:cover;">'
+        ' style="display:block;width:100%;height:auto;">'
         if event["image_url"] else ""
     )
 
