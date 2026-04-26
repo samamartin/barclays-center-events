@@ -8,7 +8,7 @@ Usage:
   python main.py --list       # Print upcoming events to stdout
 
 Cron (every Monday at 8 AM):
-  0 8 * * 1 cd /path/to/barclays-center-events && python main.py >> newsletter.log 2>&1
+  0 8 * * 1 cd /path/to/barclays-boulevardier && python main.py >> newsletter.log 2>&1
 """
 import sys
 from datetime import datetime
@@ -68,7 +68,7 @@ def main():
         return
 
     today = datetime.now()
-    subject = f"Barclays Center: {len(events)} Upcoming Events — {today.strftime('%B %-d, %Y')}"
+    subject = f"Barclays Boulevardier: {len(events)} Upcoming Events — {today.strftime('%B %-d, %Y')}"
     print(f"Sending to {GOOGLE_GROUP_EMAIL}...")
     send_newsletter(html, subject)
     print("Done.")
