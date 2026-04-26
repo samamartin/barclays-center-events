@@ -35,9 +35,12 @@ def build_html(events):
         Weekly Newsletter
       </p>
       <h1 style="margin:0;color:#fff;font-size:34px;font-weight:700;letter-spacing:1px;font-family:'Playfair Display',Georgia,serif;">
-        Barclays Center
+        Barclays Boulevardier
       </h1>
-      <p style="margin:10px 0 0;color:#BEE3F8;font-size:13px;">
+      <p style="margin:12px 0 0;color:#BEE3F8;font-size:15px;font-style:italic;font-family:'Playfair Display',Georgia,serif;">
+        Bringing you upcoming events at Brooklyn's Barclays Center over the next two weeks
+      </p>
+      <p style="margin:10px 0 0;color:#90CDF4;font-size:13px;">
         {count_label} &bull; {date_range}
       </p>
     </td>
