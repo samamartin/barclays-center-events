@@ -15,4 +15,4 @@ SMTP_PASSWORD = os.getenv("SMTP_PASSWORD", "")
 FROM_NAME = os.getenv("FROM_NAME", "Barclays Center Newsletter")
 FROM_EMAIL = os.getenv("FROM_EMAIL", "") or SMTP_USER
 
-SUBSCRIBERS_FILE = Path(os.getenv("SUBSCRIBERS_FILE", "subscribers.txt"))
+GOOGLE_GROUP_EMAIL = os.getenv("GOOGLE_GROUP_EMAIL", "")

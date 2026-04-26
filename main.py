@@ -3,7 +3,7 @@
 Barclays Center weekly events newsletter.
 
 Usage:
-  python main.py              # Fetch events and send to all subscribers
+  python main.py              # Fetch events and send to the Google Group
   python main.py --preview    # Save newsletter_preview.html instead of sending
   python main.py --list       # Print upcoming events to stdout
 
@@ -13,10 +13,10 @@ Cron (every Monday at 8 AM):
 import sys
 from datetime import datetime
 
-from config import TICKETMASTER_API_KEY, SMTP_USER, DAYS_AHEAD
+from config import TICKETMASTER_API_KEY, SMTP_USER, GOOGLE_GROUP_EMAIL, DAYS_AHEAD
 from scraper import fetch_events
 from newsletter import build_html
-from mailer import send_newsletter, load_subscribers
+from mailer import send_newsletter
 
 
 def validate_config(send_mode):
@@ -25,6 +25,8 @@ def validate_config(send_mode):
         errors.append("TICKETMASTER_API_KEY is not set")
     if send_mode and not SMTP_USER:
         errors.append("SMTP_USER is not set")
+    if send_mode and not GOOGLE_GROUP_EMAIL:
+        errors.append("GOOGLE_GROUP_EMAIL is not set")
     return errors
 
 
@@ -67,16 +69,9 @@ def main():
 
     today = datetime.now()
     subject = f"Barclays Center: {len(events)} Upcoming Events — {today.strftime('%B %-d, %Y')}"
-    print(f"Subject: {subject}")
-
-    subscribers = load_subscribers()
-    if not subscribers:
-        print("No subscribers found. Add email addresses to subscribers.txt and re-run.")
-        sys.exit(1)
-
-    print(f"Sending to {len(subscribers)} subscriber(s)...")
-    sent = send_newsletter(html, subject)
-    print(f"Done. {sent} email(s) sent.")
+    print(f"Sending to {GOOGLE_GROUP_EMAIL}...")
+    send_newsletter(html, subject)
+    print("Done.")
 
 
 if __name__ == "__main__":

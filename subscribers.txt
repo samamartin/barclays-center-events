@@ -1,6 +1,0 @@
-# One email address per line.
-# Lines starting with # are ignored.
-# Add yourself and anyone else who wants the newsletter.
-
-you@example.com
-friend@example.com
