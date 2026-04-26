@@ -46,7 +46,8 @@ def fetch_events():
     resp.raise_for_status()
     data = resp.json()
     raw_events = data.get("_embedded", {}).get("events", [])
-    return [e for e in [_parse_event(r) for r in raw_events] if e["time"]]
+    return [e for e in [_parse_event(r) for r in raw_events]
+            if e["time"] and "barclays center tours" not in e["name"].lower()]
 
 
 def _parse_event(raw):
