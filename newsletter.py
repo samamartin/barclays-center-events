@@ -24,6 +24,7 @@ def build_html(events):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Barclays Center Events</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body style="margin:0;padding:0;background:#EDF2F7;font-family:'Helvetica Neue',Arial,sans-serif;">
 
@@ -33,7 +34,7 @@ def build_html(events):
       <p style="margin:0 0 4px;color:#90CDF4;font-size:11px;letter-spacing:2px;text-transform:uppercase;">
         Weekly Newsletter
       </p>
-      <h1 style="margin:0;color:#fff;font-size:30px;font-weight:700;letter-spacing:1px;">
+      <h1 style="margin:0;color:#fff;font-size:34px;font-weight:700;letter-spacing:1px;font-family:'Playfair Display',Georgia,serif;">
         Barclays Center
       </h1>
       <p style="margin:10px 0 0;color:#BEE3F8;font-size:13px;">
@@ -94,7 +95,7 @@ def _event_card(event):
   <tr>
     <td style="padding:22px 24px;">
       {category_badge}
-      <h2 style="margin:0 0 8px;font-size:20px;color:#111;line-height:1.3;font-weight:700;">
+      <h2 style="margin:0 0 8px;font-size:20px;color:#111;line-height:1.3;font-weight:700;font-family:'Playfair Display',Georgia,serif;">
         {event["name"]}
       </h2>
       <p style="margin:0 0 18px;font-size:14px;color:#444;">
