@@ -1,0 +1,30 @@
+name: Weekly Newsletter
+
+on:
+  schedule:
+    - cron: '0 12 * * 1'  # Every Monday at 12:00 PM UTC (8 AM EDT / 7 AM EST)
+  workflow_dispatch:        # Also allows manual trigger from GitHub
+
+jobs:
+  send-newsletter:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Send newsletter
+        env:
+          TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
+          GOOGLE_GROUP_EMAIL: ${{ secrets.GOOGLE_GROUP_EMAIL }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+        run: python main.py
